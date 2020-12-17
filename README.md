@@ -1,1 +1,1 @@
-Working with high level programming. Python
+Working with Python
