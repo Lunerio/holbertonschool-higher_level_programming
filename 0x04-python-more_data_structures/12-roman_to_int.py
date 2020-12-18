@@ -17,6 +17,8 @@ def roman_to_int(roman_string):
             if i == roman_string[a]:
                 flag = 0
                 break
+            else:
+                flag = 1
         if flag == 1:
             return None
 
