@@ -15,5 +15,5 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 roman_number = "LXXXVII"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = 123
+roman_number = "ASD"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))

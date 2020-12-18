@@ -5,22 +5,20 @@ def roman_to_int(roman_string):
 
     values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     sum = 0
-    flag = 0
+    flag = 1
 
     if len(roman_string) == 1:
         for a, b in values.items():
             if roman_string[0] == a:
                 return b
 
-    for a in roman_string:
+    for a in range(len(roman_string)):
         for i in values:
-            if i == a:
+            if i == roman_string[a]:
                 flag = 0
                 break
-            flag = 1
-
-    if flag == 1:
-        return None
+        if flag == 1:
+            return None
 
     str_list = []
 
