@@ -2,39 +2,26 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i;
-	int j; /*index init_p*/
-	int count = 0;
-	listint_t *last_p = *head;
-	listint_t *init_p = *head;
+	listint_t *current = *head;
+	int array[2048];
+	int i = 0, j = 0;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (1);
 
-	while (last_p) /*count elements*/
+	while (current != NULL)
 	{
-		last_p = last_p->next;
-		count++;
+		array[i] = current->n;
+		i++;
+		current = current->next;
 	}
-
-	for(j = 0; j <= (count - 1); count--)
+	i--;
+	while (j <= i)
 	{
-		last_p = *head;
-		i = 0;
-		while (i < count - 1)
-		{
-			last_p = last_p->next;
-			i++; /*faltaba esto. Nunca subia i antes.*/
-		}
-		if (last_p->n != init_p->n)
-		{
+		if (array[j] != array[i])
 			return (0);
-		}
-		else
-		{
-			init_p = init_p->next;
-			j++;
-		}
+		i--;
+		j++;
 	}
 	return (1);
 }
