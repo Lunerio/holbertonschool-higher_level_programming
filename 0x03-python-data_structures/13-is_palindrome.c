@@ -21,25 +21,20 @@ int is_palindrome(listint_t **head)
 	{
 		last_p = *head;
 		i = 0;
-		printf("got into loop\n");
-		while (i < (count - 1))
+		while (i < count - 1)
 		{
-			printf("loop last_p %d", i);
 			last_p = last_p->next;
+			i++; /*faltaba esto. Nunca subia i antes.*/
 		}
-		printf("moved pointer to last one\n");
 		if (last_p->n != init_p->n)
 		{
-			printf("found different one\n");
 			return (0);
 		}
 		else
 		{
-			printf("got into movement because equal\n");
 			init_p = init_p->next;
 			j++;
 		}
 	}
-	printf("is pali\n");
 	return (1);
 }
