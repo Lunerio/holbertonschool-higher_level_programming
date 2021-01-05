@@ -2,3 +2,4 @@
 class Square:
     """this does nothing"""
     def square(self):
+        pass
