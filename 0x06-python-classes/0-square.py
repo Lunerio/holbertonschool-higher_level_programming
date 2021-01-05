@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    def __square__(self):
+    def __init__(self):
         pass
