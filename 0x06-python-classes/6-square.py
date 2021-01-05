@@ -26,6 +26,15 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
 
+    @property
+    def position(self):
+        """basta locoooo"""
+        return self.__position
+
+    @position.setter
+    def position(self, position):
+        """ufa che"""
+
     def my_print(self):
         """print square"""
         x = self.__size
