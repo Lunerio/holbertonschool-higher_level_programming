@@ -2,8 +2,7 @@
 import math
 add_integer = __import__('0-add_integer').add_integer
 
-test = float('inf')
-print(add_integer(test, 1))
+print(add_integer(12, 12e500000))
 print(add_integer(1, 2))
 print(add_integer(10, -2))
 print(add_integer(2))
