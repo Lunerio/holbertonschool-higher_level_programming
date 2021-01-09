@@ -10,8 +10,6 @@ def add_integer(a, b=98):
     """
     check a or b for type. Return sum if valid
     """
-
-
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
     if type(a) is bool:
@@ -21,12 +19,6 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     if type(b) is bool:
         raise TypeError("b must be an integer")
-
-    if a+1 == a:
-        raise OverflowError("a is too big")
-    if b+1 == b:
-        raise OverflowError("b is too big")
-
     # Cast a and b into int
     a = int(a)
     b = int(b)

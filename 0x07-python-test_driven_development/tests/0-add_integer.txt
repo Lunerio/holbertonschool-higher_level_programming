@@ -40,12 +40,12 @@ TypeError: b must be an integer
 >>> add_integer(12e50000, 1)
 Traceback (most recent call last):
     ...
-OverflowError: a is too big
+OverflowError: cannot convert float infinity to integer
 
 >>> add_integer(1, 12e50000)
 Traceback (most recent call last):
     ...
-OverflowError: b is too big
+OverflowError: cannot convert float infinity to integer
 
 >>> add_integer()
 Traceback (most recent call last):

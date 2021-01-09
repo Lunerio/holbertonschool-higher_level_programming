@@ -3,7 +3,7 @@ import math
 add_integer = __import__('0-add_integer').add_integer
 
 print(add_integer(12, 12e500000))
-print(add_integer(1, 2))
+print(add_integer(1a, 2))
 print(add_integer(10, -2))
 print(add_integer(2))
 print(add_integer(100.3, -2))
