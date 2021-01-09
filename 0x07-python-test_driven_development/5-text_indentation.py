@@ -22,4 +22,4 @@ def text_indentation(text):
             n_l[i + 1] = '\n\n'
     n_t = ""
     n_t = n_t.join(n_l)
-    print(n_t)
+    print("{}".format(n_t), end="")
