@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This module prints in screen a first name and a last name.
+This module prints
+in screen
+a first name and a last name.
 """
 
 
