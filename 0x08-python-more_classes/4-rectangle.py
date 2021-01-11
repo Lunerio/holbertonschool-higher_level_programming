@@ -69,12 +69,4 @@ class Rectangle:
 
     def __repr__(self):
         """return the string"""
-        rec = ""
-        if self.__width is 0 or self.__height is 0:
-            return rec
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rec += "#"
-            if i < (self.__height - 1):
-                rec += "\n"
-        return str(rec)
+        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
