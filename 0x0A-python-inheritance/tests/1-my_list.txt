@@ -1,0 +1,21 @@
+import class:
+>>> MyList = __import__('1-my_list').MyList
+>>> lista = MyList()
+
+print empty list:
+>>> print(lista)
+[]
+>>> lista.print_sorted()
+[]
+
+add values and print normal list:
+>>> lista.append(1)
+>>> lista.append(24)
+>>> lista.append(5)
+>>> lista.append(3)
+>>> print(lista)
+[1, 24, 5, 3]
+
+print sorted list:
+>>> lista.print_sorted()
+[1, 3, 5, 24]
