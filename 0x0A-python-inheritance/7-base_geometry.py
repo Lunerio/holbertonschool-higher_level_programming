@@ -17,4 +17,4 @@ class BaseGeometry():
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
         if type(name) != str:
-            raise TypeError("name must be a strings")
+            raise TypeError("name must be a string")
