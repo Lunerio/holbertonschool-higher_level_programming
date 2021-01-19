@@ -30,6 +30,6 @@ add negative value and print:
 create a clean list and use print_sorted:
 >>> new_list = list()
 >>> new_list.print_sorted()
-algo
-
-args to print_sorted:
+Traceback (most recent call last):
+    ...
+AttributeError: 'list' object has no attribute 'print_sorted'
