@@ -10,4 +10,4 @@ def lookup(obj):
     return a list with the dict of obj
     """
 
-    return (list(obj.__class__.__dict__))
+    return (dir(obj))
