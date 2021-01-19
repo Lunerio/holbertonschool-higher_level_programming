@@ -7,9 +7,10 @@ class BaseGeometry():
     """contains a method"""
     def area(self):
         """return area of rectangle"""
-        return (self.__size * self.__size))
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """validator for value"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
@@ -44,3 +45,7 @@ class Square(Rectangle):
         self.__size = size
         super().integer_validator("size", self.__size)
         super().__init__(size, size)
+
+    def area(self):
+        """ return area of square"""
+        return (self.__size * self.__size)
