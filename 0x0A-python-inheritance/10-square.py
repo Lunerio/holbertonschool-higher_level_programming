@@ -6,8 +6,8 @@ This module contains a class called BaseGeometry"""
 class BaseGeometry():
     """contains a method"""
     def area(self):
-        """raise error"""
-        raise Exception("area() is not implemented")
+        """return area of rectangle"""
+        return (self.__size * self.__size))
 
     def integer_validator(self, name, value):
         if type(value) is not int:
@@ -44,7 +44,3 @@ class Square(Rectangle):
         self.__size = size
         super().integer_validator("size", self.__size)
         super().__init__(size, size)
-
-    def area(self):
-        """return area of square"""
-        return (self.__size * self.__size)
