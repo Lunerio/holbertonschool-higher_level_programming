@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""module with a class"""
+"""
+module with a class
+blabla
+"""
 
 
 class MyList(list):
