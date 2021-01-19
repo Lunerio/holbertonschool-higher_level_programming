@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this module contains a function that checks
+"""
+this module contains a function that checks
 if an object is an instance of a subclass that inherited
 from a given class
 """
