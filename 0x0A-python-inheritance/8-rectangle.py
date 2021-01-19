@@ -4,19 +4,7 @@ This module contains a class called BaseGeometry
 """
 
 
-class BaseGeometry():
-    """contains a method"""
-    def area(self):
-        """raise error"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validator"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
     """subclass of BaseGeometry
