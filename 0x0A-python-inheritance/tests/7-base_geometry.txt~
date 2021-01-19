@@ -1,0 +1,25 @@
+importing the class:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+correct input:
+>>> bg.integer_validator("test", 12)
+
+negative int in value:
+>>> bg.integer_validator("more", -1)
+Traceback (most recent call last):
+    ...
+ValueError: more must be greater than 0
+
+not int:
+>>> bg.integer_validator("something", "string")
+Traceback (most recent call last):
+    ...
+TypeError: something me be an integer
+
+boolean:
+>>> bg.integer_validator("something", True)
+Traceback (most recent call last):
+    ...
+TypeError: something me be an integer
