@@ -20,7 +20,7 @@ class Student():
     def to_json(self, attrs=None):
         """return dict of instance"""
         new_dict = {}
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         for i in attrs:
             if hasattr(self, i):
