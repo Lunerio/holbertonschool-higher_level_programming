@@ -27,9 +27,11 @@ def pascal_triangle(n):
     lista_base = lista_2[:]
     new_num = 0
     save_list = []
+    prev_list = []
 
     for i in range(2, n):
         index = 1
+        prev_list = lista_base[:]
 
         if (len(lista_base) % 2) == 1:
             limite = int((len(lista_base) + 2) / 2)
@@ -42,7 +44,7 @@ def pascal_triangle(n):
 
             lista_base = save_list[:]
 
-            for j in range(-1, (limite * -1) - 1, -1):
+            for j in range(-1, (limite * - 1) - 1, -1):
                 lista_base[j] = lista_base[(j * -1) - 1]
 
         else:
@@ -57,8 +59,12 @@ def pascal_triangle(n):
             lista_base = save_list[:]
 
             for j in range(-1, (limite * -1), -1):
-                lista_base.pop(j - 1)
+                lista_base.pop(j)
                 lista_base[j] = lista_base[(j * -1) - 1]
+
+        for i in prev_list:
+            if i in lista_base and i != 1:
+                lista_base.remove(i)
 
         lista_big.append(lista_base)
 
