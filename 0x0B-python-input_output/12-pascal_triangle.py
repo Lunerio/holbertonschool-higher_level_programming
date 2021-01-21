@@ -62,5 +62,4 @@ def pascal_triangle(n):
 
         lista_big.append(lista_base)
 
-
     return lista_big
