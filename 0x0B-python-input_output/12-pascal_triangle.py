@@ -6,6 +6,7 @@ lista_big = []
 lista_1 = [1]
 lista_2 = [1, 1]
 
+
 def pascal_triangle(n):
     """return list with lists with values of pascal triangle"""
     if n <= 0:
