@@ -101,6 +101,18 @@ class Rectangle(Base):
 
     def __str__(self):
         """return string for str"""
-        s = "[Rectangle] ({}) {}/{} - {}/{}".format
-        (self.id, self.__x, self.__y, self.__width, self.__height)
-        return s
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format
+        (self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """method that reasigns values"""
+        values_list = [self.id, self.__width, self.__height, self.__x, self.__y]
+
+        for i in range(len(args)):
+            values_list[i] = args[i]
+
+        self.id = values_list[0]
+        self.__width = values_list[1]
+        self.__height = values_list[2]
+        self.__x = values_list[3]
+        self.__y = values_list[4]
