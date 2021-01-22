@@ -5,6 +5,7 @@
 lista_big = []
 lista_1 = [1]
 lista_2 = [1, 1]
+new_number = 0
 
 
 def pascal_triangle(n):
@@ -24,48 +25,19 @@ def pascal_triangle(n):
     lista_big.append(lista_1)
     lista_big.append(lista_2)
 
-    lista_base = lista_2[:]
-    new_num = 0
-    save_list = []
-    prev_list = []
+    prev_list = lista_2[:]
 
     for i in range(2, n):
-        index = 1
-        prev_list = lista_base[:]
+        new_list = []
+        limit = len(prev_list) - 1
 
-        if (len(lista_base) % 2) == 1:
-            limite = int((len(lista_base) + 2) / 2)
-            save_list = lista_base[:]
+        for i in range(0, limit):
+            new_number = prev_list[i] + prev_list[i + 1]
+            new_list.append(new_number)
 
-            for j in range(0, limite - 1):
-                new_num = lista_base[j] + lista_base[j + 1]
-                save_list.insert(index, new_num)
-                index += 1
-
-            lista_base = save_list[:]
-
-            for j in range(-1, (limite * - 1) - 1, -1):
-                lista_base[j] = lista_base[(j * -1) - 1]
-
-        else:
-            limite = len(lista_base) - 1
-            save_list = lista_base[:]
-
-            for j in range(0, limite):
-                new_num = lista_base[j] + lista_base[j + 1]
-                save_list.insert(index, new_num)
-                index += 1
-
-            lista_base = save_list[:]
-
-            for j in range(-1, (limite * -1), -1):
-                lista_base.pop(j)
-                lista_base[j] = lista_base[(j * -1) - 1]
-
-        for i in prev_list:
-            if i in lista_base and i != 1:
-                lista_base.remove(i)
-
-        lista_big.append(lista_base)
+        new_list.insert(0, 1)
+        new_list.insert(limit + 1, 1)
+        lista_big.append(new_list)
+        prev_list = new_list[:]
 
     return lista_big
