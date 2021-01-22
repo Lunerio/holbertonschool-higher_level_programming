@@ -104,7 +104,7 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format
         (self.id, self.__x, self.__y, self.__width, self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """method that reasigns values"""
         values_list = [self.id, self.__width, self.__height, self.__x, self.__y]
 
