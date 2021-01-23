@@ -116,3 +116,9 @@ class Rectangle(Base):
 
             for i in range(len(args)):
                 setattr(self, values_list[i], args[i])
+
+    def to_dictionary(self):
+        """return a dictionary of Rectangle"""
+        values_dict = {'id': self.id, 'width': self.__width,
+                       'height': self.__height, 'x': self.__x, 'y': self.__y}
+        return values_dict

@@ -43,3 +43,9 @@ class Square(Rectangle):
 
             for i in range(len(args)):
                 setattr(self, values_list[i], args[i])
+
+    def to_dictionary(self):
+        """return dictionary with values"""
+        values_dict = {'id': self.id, 'size': self.width,
+                       'x': self.x, 'y': self.y}
+        return values_dict
