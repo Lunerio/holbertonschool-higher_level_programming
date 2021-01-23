@@ -101,12 +101,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """return string for str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format
-        (self.id, self.__x, self.__y, self.__width, self.__height)
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format
+                (self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """method that reasigns values"""
-
         if args is None or len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)

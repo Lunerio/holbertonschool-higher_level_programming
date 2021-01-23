@@ -10,7 +10,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """init method"""
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     def __str__(self):
         """string method"""
@@ -23,11 +22,24 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """setter for size"""
-        if type(size) is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if size <= 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = self.size
-        self.__height = self.size
+        self.__width = value
+        self.__height = value
+
+    def update(self, *args, **kwargs):
+        """update method for new values"""
+        if args is None or len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            values_list = ['id', 'size', 'x', 'y']
+            if len(args) > 4:
+                raise IndexError("4 values max")
+
+            for i in range(len(args)):
+                setattr(self, values_list[i], args[i])
