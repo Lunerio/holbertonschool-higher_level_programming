@@ -104,10 +104,17 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format
         (self.id, self.__x, self.__y, self.__width, self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """method that reasigns values"""
-        values_list = ['id', 'width',
-        'height', 'x', 'y']
 
-        for i in range(len(args)):
-            setattr(self, values_list[i], args[i])
+        if args is None or len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            values_list = ['id', 'width',
+            'height', 'x', 'y']
+            if len(args) > 5:
+                raise IndexError("5 values max")
+
+            for i in range(len(args)):
+                setattr(self, values_list[i], args[i])
