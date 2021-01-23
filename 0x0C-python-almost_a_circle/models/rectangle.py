@@ -101,8 +101,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """return string for str"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format
-        (self.id, self.__x, self.__y, self.__width, self.__height))
+        return "[Rectangle] ({}) {}/{} - {}/{}".format
+        (self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """method that reasigns values"""
@@ -111,8 +111,7 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
-            values_list = ['id', 'width',
-            'height', 'x', 'y']
+            values_list = ['id', 'width', 'height', 'x', 'y']
             if len(args) > 5:
                 raise IndexError("5 values max")
 
