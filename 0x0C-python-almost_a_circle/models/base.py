@@ -39,12 +39,12 @@ class Base():
         lista = []
 
         for i in list_objs:
-            lista.append(i.__dict__)
+            lista.append(cls.to_dictionary(i))
 
         name = str(cls.__name__) + ".json"
 
         with open(name, 'w') as f:
-            json.dump(lista, f)
+            f.write(cls.to_json_string(lista))
 
     @staticmethod
     def from_json_string(json_string):
@@ -53,4 +53,11 @@ class Base():
             return []
         if type(json_string) is not str:
             raise TypeError("argument must be a string")
-        return list(json.loads(json_string))
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """creates an instance of the given class"""
+        instance = cls(1, 1, 1, 1)
+        cls.update(instance, **dictionary)
+        return instance
