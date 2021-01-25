@@ -151,5 +151,14 @@ class TestRectangle(unittest.TestCase):
             fail_inst = Rectangle(2, 3, 0, True, 1)
             fail_inst = Rectangle(2, 3, 0, False, 1)
 
+    def test_zero_values(self):
+        """Test passing 0."""
+        with self.assertRaises(ValueError):
+            # on width
+            fail_inst = Rectangle(0, 3, 0, 0, 1)
+        with self.assertRaises(ValueError):
+            # on height
+            fail_inst = Rectangle(2, 0, 0, 0, 1)
+
 if __name__ == '__main__':
     unittest.main()
