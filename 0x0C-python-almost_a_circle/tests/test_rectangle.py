@@ -50,5 +50,20 @@ class TestRectangle(unittest.TestCase):
             """on y"""
             fail_inst = Rectangle(2, 3, 0, '0', 1)
 
+    def test_None_values(self):
+        """test None values"""
+        with self.assertRaises(TypeError):
+            """on width"""
+            fail_inst = Rectangle(None, 3, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            """on height"""
+            fail_inst = Rectangle(2, None, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            """on x"""
+            fail_inst = Rectangle(2, 3, None, 0, 1)
+        with self.assertRaises(TypeError):
+            """on y"""
+            fail_inst = Rectangle(2, 5, 0, None, 1)
+
 if __name__ == '__main__':
     unittest.main()
