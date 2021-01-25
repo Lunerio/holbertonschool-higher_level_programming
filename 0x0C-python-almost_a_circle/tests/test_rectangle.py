@@ -172,5 +172,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(inst_update.to_dictionary(),
                          {'id': 13, 'width': 1, 'height': 1, 'x': 0, 'y': 0})
 
+    def test_update_failure(self):
+        """test failures of update method with kwargs"""
+        inst_up = Rectangle(1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            """wrong data type"""
+            inst_up.update(id=1, height=[], width='test', x=1, y=1)
+
 if __name__ == '__main__':
     unittest.main()
