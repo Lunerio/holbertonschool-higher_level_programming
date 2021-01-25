@@ -178,6 +178,12 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             """wrong data type"""
             inst_up.update(id=1, height=[], width='test', x=1, y=1)
+        with self.assertRaises(ValueError):
+            """negative"""
+            inst_up.update(id=1, height=-1, width=1, x=1, y=1)
+        with self.assertRaises(ValueError):
+            """0 on height"""
+            inst_up.update(id=1, height=0, width=1, x=1, y=1)
 
 if __name__ == '__main__':
     unittest.main()
