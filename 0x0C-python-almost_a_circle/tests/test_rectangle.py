@@ -91,5 +91,65 @@ class TestRectangle(unittest.TestCase):
             """wrong data type"""
             inst_up.update(1, 1, 'test', [1], 1)
 
+    def test_float_values(self):
+        """Test values as floats."""
+        with self.assertRaises(TypeError):
+            # Float as width
+            fail_inst = Rectangle(8.1, 3, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float as height
+            fail_inst = Rectangle(3, 2.4, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float as x
+            fail_inst = Rectangle(1, 3, 6.3, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float as y
+            fail_inst = Rectangle(2, 3, 0, 4.2, 1)
+        # Float('inf') as value
+        with self.assertRaises(TypeError):
+            # Float('inf') as width
+            fail_inst = Rectangle(float('inf'), 3, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('inf') as height
+            fail_inst = Rectangle(3, float('inf'), 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('inf') as x
+            fail_inst = Rectangle(1, 3, float('inf'), 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('inf') as y
+            fail_inst = Rectangle(2, 3, 0, float('inf'), 1)
+        # Float('NaN') as value
+        with self.assertRaises(TypeError):
+            # Float('NaN') as width
+            fail_inst = Rectangle(float('NaN'), 3, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('NaN') as height
+            fail_inst = Rectangle(3, float('NaN'), 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('NaN') as x
+            fail_inst = Rectangle(1, 3, float('NaN'), 0, 1)
+        with self.assertRaises(TypeError):
+            # Float('NaN') as y
+            fail_inst = Rectangle(2, 3, 0, float('NaN'), 1)
+
+    def test_boolean_values(self):
+        """Test values as floats."""
+        with self.assertRaises(TypeError):
+            # Boolean as width
+            fail_inst = Rectangle(True, 3, 0, 0, 1)
+            fail_inst = Rectangle(False, 3, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Boolean as height
+            fail_inst = Rectangle(3, True, 0, 0, 1)
+            fail_inst = Rectangle(3, False, 0, 0, 1)
+        with self.assertRaises(TypeError):
+            # Boolean as x
+            fail_inst = Rectangle(1, 3, True, 0, 1)
+            fail_inst = Rectangle(1, 3, False, 0, 1)
+        with self.assertRaises(TypeError):
+            # Boolean as y
+            fail_inst = Rectangle(2, 3, 0, True, 1)
+            fail_inst = Rectangle(2, 3, 0, False, 1)
+
 if __name__ == '__main__':
     unittest.main()
