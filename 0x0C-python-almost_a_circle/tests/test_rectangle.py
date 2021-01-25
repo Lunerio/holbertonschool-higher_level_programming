@@ -65,5 +65,12 @@ class TestRectangle(unittest.TestCase):
             """on y"""
             fail_inst = Rectangle(2, 5, 0, None, 1)
 
+    def test_arg_number(self):
+        """test less that 3 args and more than 5 args"""
+        with self.assertRaises(TypeError):
+            inst = Rectangle(3, 3, 0, 0, 1, 5)
+        with self.assertRaises(TypeError):
+            inst = Rectangle(1)
+
 if __name__ == '__main__':
     unittest.main()
