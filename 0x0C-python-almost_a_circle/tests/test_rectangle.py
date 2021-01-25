@@ -81,5 +81,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(inst_update.to_dictionary(),
                          {'id': 13, 'width': 3, 'height': 2, 'x': 0, 'y': 0})
 
+    def test_update_failure(self):
+        """test failures of update method"""
+        inst_up = Rectangle(1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            """more than five args"""
+            inst_up.update(1, 2, 3, 3, 1, 2)
+        with self.assertRaises(TypeError):
+            """wrong data type"""
+            inst_up.update(1, 1, 'test', [1], 1)
+
 if __name__ == '__main__':
     unittest.main()

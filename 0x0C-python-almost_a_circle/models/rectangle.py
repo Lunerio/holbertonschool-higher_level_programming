@@ -112,7 +112,7 @@ class Rectangle(Base):
         else:
             values_list = ['id', 'width', 'height', 'x', 'y']
             if len(args) > 5:
-                raise IndexError("5 values max")
+                raise TypeError("No more than 5 arguments")
 
             for i in range(len(args)):
                 setattr(self, values_list[i], args[i])
