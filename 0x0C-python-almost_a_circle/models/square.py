@@ -39,7 +39,7 @@ class Square(Rectangle):
         else:
             values_list = ['id', 'size', 'x', 'y']
             if len(args) > 4:
-                raise IndexError("4 values max")
+                raise TypeError("4 values max")
 
             for i in range(len(args)):
                 setattr(self, values_list[i], args[i])
