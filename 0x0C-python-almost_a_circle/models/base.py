@@ -52,9 +52,9 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """creates an instance of the given class"""
-        if cls.__name__ == Rectangle:
+        if cls.__name__ == "Rectangle":
             instance = cls(1, 1)
-        if cls.__name__ == Square:
+        if cls.__name__ == "Square":
             instance = cls(1)
         instance.update(**dictionary)
         return instance
