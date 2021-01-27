@@ -16,7 +16,7 @@ class Base():
         if id is not None:
             self.id = id
         else:
-            type(self).__nb_objects += 1
+            Base.__nb_objects += 1
             self.id = self.__nb_objects
 
     @staticmethod
@@ -29,8 +29,6 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """use json to write to a file a list of instances"""
-        if type(list_objs) is not list:
-            raise TypeError("argument must be a list")
         lista = []
         name = str(cls.__name__) + ".json"
         if list_objs is None:
