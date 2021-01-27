@@ -24,7 +24,9 @@ class Base():
         """return json string object of argument"""
         if type(list_dictionaries) is not list:
             raise TypeError("argument must be a list")
-        if list_dictionaries is None or list_dictionaries == []:
+        if list_dictionaries is Nonelist_dictionaries == []:
+            return "[]"
+        if len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
