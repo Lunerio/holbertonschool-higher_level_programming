@@ -59,6 +59,8 @@ class test_base(unittest.TestCase):
                          {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8})
         with self.assertRaises(TypeError):
             Base.to_json_string()
+        test_base = Base.to_json_string(None)
+        self.assertEqual(test_base, [])
 
     def test_to_dictionary(self):
         """Test if the output is correct: it returns the class properties"""
