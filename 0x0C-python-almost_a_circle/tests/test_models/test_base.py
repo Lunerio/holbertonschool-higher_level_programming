@@ -32,6 +32,10 @@ class test_base(unittest.TestCase):
         """Test base"""
         base = Base(1)
         self.assertEqual(base.id, 1)
+        base1 = Base()
+        self.assertEqual(base1.id, 1)
+        base2 = Base()
+        self.assertEqual(base2.id, 2)
     """
     def test_wrong(self):
 
