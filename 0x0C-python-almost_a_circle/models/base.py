@@ -52,8 +52,11 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """creates an instance of the given class"""
-        instance = cls(1, 1, 1, 1)
-        cls.update(instance, **dictionary)
+        if cls.__name__ == Rectangle:
+            instance = cls(1, 1)
+        if cls.__name__ == Square:
+            instance = cls(1)
+        instance.update(**dictionary)
         return instance
 
     @classmethod
