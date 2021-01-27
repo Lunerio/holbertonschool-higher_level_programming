@@ -22,8 +22,6 @@ class Base():
     @staticmethod
     def to_json_string(list_dictionaries):
         """return json string object of argument"""
-        if type(list_dictionaries) is not list:
-            raise TypeError("argument must be a list")
         if list_dictionaries is None:
             return "[]"
         if list_dictionaries == []:
