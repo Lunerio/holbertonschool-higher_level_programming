@@ -36,18 +36,6 @@ class test_base(unittest.TestCase):
         self.assertEqual(base1.id, 1)
         base2 = Base()
         self.assertEqual(base2.id, 2)
-    """
-    def test_wrong(self):
-
-        base2 = Base([1, 2, 3])
-        self.assertEqual(base2.id, [1, 2, 3])
-        base3 = Base("ate")
-        self.assertEqual(base3.id, "ate")
-        base4 = Base(None)
-        self.assertEqual(base4.id, 1)
-        base5 = Base(True)
-        self.assertEqual(base5.id, True)
-    """
 
     def test_to_json_string(self):
         """Test function to_json_string"""
@@ -59,8 +47,6 @@ class test_base(unittest.TestCase):
                          {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8})
         with self.assertRaises(TypeError):
             Base.to_json_string()
-        test_base = Base.to_json_string(None)
-        self.assertEqual(test_base, [])
 
     def test_to_dictionary(self):
         """Test if the output is correct: it returns the class properties"""
@@ -175,11 +161,18 @@ class test_base(unittest.TestCase):
             self.assertEqual(lists, [])
 
     def test_save_to_file(self):
-            """Tests if function saves into a file"""
-            s1 = Square(3)
-            s1_json = Square.save_to_file([s1])
-            with open("Square.json", "r") as f:
-                self.assertEqual([s1.to_dictionary()], json.load(f))
+        """Tests if function saves into a file"""
+        s1 = Square(3)
+        s1_json = Square.save_to_file([s1])
+        with open("Square.json", "r") as f:
+            self.assertEqual([s1.to_dictionary()], json.load(f))
+
+    def test_from_json_string(self):
+        """test from Json to String"""
+        test_base = Base.from_json_string(None)
+        self.assertEqual(test_base, [])
+        test2 = Base.from_json_string("[]")
+        self.assertEqual(test2, [])
 
 if __name__ == '__main__':
     unittest.main()
