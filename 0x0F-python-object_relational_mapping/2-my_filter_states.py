@@ -3,7 +3,7 @@
    argv[1] = username
    argv[2] = password
    argv[3] = database name
-   argv[4] = 
+   argv[4] = Data filter
 """
 
 
@@ -16,7 +16,8 @@ if __name__ == "__main__":
     # create cursor
     cursor = database.cursor()
     # execute query
-    cursor.execute("SELECT id, name FROM states WHERE name=%s ORDER BY id ASC", (argv[4],))
+    cursor.execute("SELECT id, name FROM states WHERE name=%s ORDER BY id ASC",
+                   (argv[4],))
     # fetch result into variable
     rows = cursor.fetchall()
     # print rows
