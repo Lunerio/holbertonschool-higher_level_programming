@@ -25,7 +25,7 @@ if __name__ == '__main__':
     for i in state_id:
         if i.name == argv[4]:
             print('{}'.format(i.id))
-            found =  True
+            found = True
             break
     if found is False:
         print('Not found')
