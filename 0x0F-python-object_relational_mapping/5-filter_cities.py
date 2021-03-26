@@ -27,7 +27,7 @@ if __name__ == "__main__":
     data_list = []
     for i in rows:
         data_list.append(i[0])
-    print(', '.join(data_list))
+    print(*data_list, sep=', ')
     # close cursor and database
     cursor.close()
     database.close()
