@@ -15,6 +15,6 @@ class State(Base):
     """ class for states table with attributes"""
     __tablename__ = 'states'
     # id is int, autoincrement, not null, and primary key
-    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
     # name is string, not null and max 128 chars
     name = Column(String(128), nullable=False)
