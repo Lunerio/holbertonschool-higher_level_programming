@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
     # execute query
     cursor.execute("SELECT id, name FROM states WHERE\
-                   name REGEXP '^[N]' ORDER BY id ASC")
+                   name LIKE 'N%' ORDER BY id ASC")
     # fetch result into variable
     rows = cursor.fetchall()
     # print rows
