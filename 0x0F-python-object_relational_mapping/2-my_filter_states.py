@@ -16,8 +16,8 @@ if __name__ == "__main__":
     # create cursor
     cursor = database.cursor()
     # execute query
-    cursor.execute("SELECT id, name FROM states WHERE name='{:%s}'
-                   ORDER BY id ASC".format(argv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
+                ORDER BY id ASC".format(argv[4]))
     # fetch result into variable
     rows = cursor.fetchall()
     # print rows
