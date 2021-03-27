@@ -22,7 +22,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
     # print rows
     for i in rows:
-        print(i)
+        print('{}'.format(i))
     # close cursor and database
     cursor.close()
     database.close()
