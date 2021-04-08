@@ -1,1 +1,3 @@
-curl -X PUT 0.0.0.0:5000/catch_me/ -d "user_id=98" -L ; echo ""
+#!/bin/bash
+# Get a response from the given argument
+curl -X PUT "$1" -L -H "Origin: HolbertonSchool" -d "user_id=98"
