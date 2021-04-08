@@ -1,3 +1,3 @@
 #!/bin/bash
 # Get the URL 200 response
-curl -L "$1"
+curl -s -L "$1"
