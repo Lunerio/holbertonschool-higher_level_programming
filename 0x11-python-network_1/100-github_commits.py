@@ -13,14 +13,17 @@ if __name__ == '__main__':
     url = "https://api.github.com/repos/" + argv[2] +\
         '/' + argv[1] + '/commits'
     response = requests.get(url)
-    dict = response.json()  # is a list
-    count = 0
-    for element in dict:
-        if count == 11:
-            break
-        sha_value = element.get('sha')  # this
-        commit = element.get('commit')
-        author = commit.get('author')
-        name = author.get('name')  # this
-        print('{}: {}'.format(sha_value, name))
-        count += 1
+    if response.status_code >= 400:
+        print('None')
+    else:
+        dict = response.json()  # is a list
+        count = 0
+        for element in dict:
+            if count == 11:
+                break
+            sha_value = element.get('sha')  # this
+            commit = element.get('commit')
+            author = commit.get('author')
+            name = author.get('name')  # this
+            print('{}: {}'.format(sha_value, name))
+            count += 1
