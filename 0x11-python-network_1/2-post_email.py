@@ -15,4 +15,4 @@ if __name__ == '__main__':
     with urllib.request.urlopen(argv[1], var) as response:
         http_info = response.read()
 
-    print(http_info.decode())
+    print(http_info.decode("utf-8"))
