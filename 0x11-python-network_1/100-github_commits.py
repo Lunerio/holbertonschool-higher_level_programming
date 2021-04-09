@@ -19,7 +19,7 @@ if __name__ == '__main__':
         dict = response.json()  # is a list
         count = 0
         for element in dict:
-            if count == 11:
+            if count == 10:
                 break
             sha_value = element.get('sha')  # this
             commit = element.get('commit')
