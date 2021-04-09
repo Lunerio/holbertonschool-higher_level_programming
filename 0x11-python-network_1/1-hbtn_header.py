@@ -9,7 +9,7 @@ import urllib.request
 
 
 if __name__ == '__main__':
-    with urllib.request.urlopen('https://intranet.hbtn.io') as response:
+    with urllib.request.urlopen(argv[1]) as response:
         http = response.getheader('X-Request-Id')
 
     print(http)
