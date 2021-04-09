@@ -6,7 +6,7 @@
 
 def find_peak(list_of_integers):
     """Function that finds a peak in a list"""
-    if len(list_of_integers) == 0:
+    if len(list_of_integers) == 0 || list_of_integers is None:
         return None
     elif len(list_of_integers) == 1:
         return list_of_integers[0]
