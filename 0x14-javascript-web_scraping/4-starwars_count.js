@@ -9,9 +9,9 @@ request(url, function (error, response, body) {
   } else {
     const dict = JSON.parse(body);
     const movies = dict.results;
-      for (let i = 0; i < movies.length; i++) {
-	  if (movies[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-              count += 1;
+    for (let i = 0; i < movies.length; i++) {
+      if (movies[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
+        count += 1;
       }
     }
     console.log(count);
