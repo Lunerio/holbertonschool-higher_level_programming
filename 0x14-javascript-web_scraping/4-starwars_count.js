@@ -11,7 +11,7 @@ request(url, function (error, response, body) {
     const dict = JSON.parse(body);
     const movies = dict.results;
     for (let i = 0; i < movies.length; i++) {
-      if (movies[i].characters.includes('swapi-api.hbtn.io/api/people/18/')) {
+	if (movies[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/') || movies[i].characters.includes('http://swapi.co/api/people/18/')) {
         count += 1;
       }
     }
