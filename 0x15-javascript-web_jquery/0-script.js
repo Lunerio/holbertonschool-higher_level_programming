@@ -1,2 +1,2 @@
-let header_tag = document.querySelector('header')
-header_tag.style.color = '#FF0000'
+const headerTag = document.querySelector('header');
+headerTag.style.color = '#FF0000';
